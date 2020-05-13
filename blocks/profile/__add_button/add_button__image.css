@@ -1,0 +1,8 @@
+.add_button__image {
+  width: 22px;
+  height: 22px;
+}
+
+.profile__add_button:hover .add_button__image {
+  opacity: 0.6;
+}

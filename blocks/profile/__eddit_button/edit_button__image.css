@@ -1,0 +1,8 @@
+.edit_button__image {
+  width: 10px;
+  height: 10px;
+}
+
+.profile__edit_button:hover .edit_button__image {
+  opacity: 0.6;
+}

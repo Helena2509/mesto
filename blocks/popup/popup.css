@@ -1,0 +1,26 @@
+
+@import url(./__container/popup__container.css);
+
+@import url(./form/form__close_button.css);
+
+@import url(./form/form__close_icon.css);
+
+@import url(./form/form__description.css);
+
+@import url(./form/form__heading.css);
+
+@import url(./form/form__name.css);
+
+@import url(./form/form__submit_button.css);
+
+@import url(./form/form.css);
+
+.popup {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

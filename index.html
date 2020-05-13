@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место</title>
+    <link rel="stylesheet" href="pages/contacts.css">
+  </head>
+  <body class="body">
+    <div class="page">
+      <header class="header">
+        <img class="header__logo" src="images/logo.png" alt="Логотип">
+        <div class="header__line"></div>
+      </header>
+      <main class="main">
+        <section class="profile">
+          <img class="profile__image" src="images/profile.jpg" alt="Аватар вашего профиля">
+          <div class="profile__streamer">
+            <div class="profile__info">
+              <h2 class="profile__author">Жак-Ив Кусто</h2>
+              <button class="profile__edit_button">
+                <img class="edit_button__image" src="images/edit_buttom.png">
+              </button>
+            </div>
+          <p class="profile__description">Исследователь океана</p>
+        </div>
+          <button class="profile__add_button">
+            <img class="add_button__image" src="images/add_buttom.png">
+          </button>
+        </section>
+        <section class="elements">
+          <div class="element">
+            <img class="element__image" src="images/kirill-pershin-unsplash.jpg">
+            <div class="element__description">
+              <p class="element__heading">Карачаевск</p>
+              <img class="element__group" src="images/group.png">
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__image" src="images/kirill-pershin.png">
+            <div class="element__description">
+              <p class="element__heading">Гора Эльбрус</p>
+              <img class="element__group" src="images/group.png">
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__image" src="images/kirill-pershin-unsplash.png">
+            <div class="element__description">
+              <p class="element__heading">Домбай</p>
+              <img class="element__group" src="images/group.png">
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__image" src="images/photofield.jpg">
+            <div class="element__description">
+              <p class="element__heading">Карачаевск</p>
+              <img class="element__group" src="images/group.png">
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__image" src="images/photofforest.jpg">
+            <div class="element__description">
+              <p class="element__heading">Карачаевск</p>
+              <img class="element__group" src="images/group.png">
+            </div>
+          </div>
+          <div class="element">
+            <img class="element__image" src="images/photoforest.jpg">
+            <div class="element__description">
+              <p class="element__heading">Карачаевск</p>
+              <img class="element__group" src="images/group.png">
+            </div>
+          </div>
+        </section>
+
+      </main>
+      <script src="pages/script.js"></script>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2020. Касицкая Елена</p>
+      </footer>
+    </div>
+    <section class="popup">
+      <div class="popup__container">
+        <h2 class="form__heading">Редактировать профиль</h2>
+        <form class="form">
+          <input type="text" class="form__name" value="Жак-Ив Кусто" maxlength="20">
+          <input type="text" class="form__description" value="Исследователь океана" maxlength="40">
+          <input type="submit" class="form__submit_button" value="Сохранить">
+        </form>
+        <button class="form__close_button"> 
+          <img class="form__close_icon" src="images/Close_Icon.png">
+        </button>
+      </div>
+    </section>
+  </body>
+</html>

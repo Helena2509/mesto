@@ -1,0 +1,18 @@
+.form__close_button {
+  position: absolute;
+  top: -37px;
+  left: 428px;
+  width: 41px;
+  height: 41px;
+  background: rgba(0, 0, 0, 0);
+  border-width: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+@media screen and (max-width : 700px) {
+  .form__close_button {
+    width: 263px;
+    height: 309px;
+  }
+}

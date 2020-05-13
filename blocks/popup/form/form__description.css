@@ -1,0 +1,12 @@
+.form__description {
+  width: 358px;
+  margin: 0 auto 20px;
+  border: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width : 700px) {
+  .form__description  {
+    width: 205px;
+  }
+}
