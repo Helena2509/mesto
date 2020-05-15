@@ -16,7 +16,9 @@
 
 @media screen and (max-width : 700px) {
   .form__closeButton {
-    width: 263px;
-    height: 309px;
+    top: -19px;
+    left: 264px;
+    width: 18px;
+    height: 18px;
   }
 }
