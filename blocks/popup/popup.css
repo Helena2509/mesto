@@ -1,9 +1,7 @@
 
 @import url(./__container/popup__container.css);
 
-@import url(./form/form__close_button.css);
-
-@import url(./form/form__close_icon.css);
+@import url(./form/form__closeButton.css);
 
 @import url(./form/form__description.css);
 
@@ -11,7 +9,7 @@
 
 @import url(./form/form__name.css);
 
-@import url(./form/form__submit_button.css);
+@import url(./form/form__submitButton.css);
 
 @import url(./form/form.css);
 

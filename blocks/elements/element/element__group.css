@@ -3,4 +3,11 @@
   height: 20px;
   justify-content: center;
   margin: auto 30px auto auto;
+  border: none; 
+  outline: none; 
+  background-color: white;
+  border: 0.5px solid #eee;
+  background-image: url(../../../images/group.png);
+  cursor: pointer;
+  outline: none;
 }
