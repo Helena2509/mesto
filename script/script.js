@@ -23,7 +23,7 @@ function formSubmitHandler (evt) {
   let job = jobInput.value;
   author.textContent = name;
   description.textContent = job;
-  formСlose ();
+  popup.classList.remove('popup_opened');
 }
 
 editButton.addEventListener('click', formOpen);
