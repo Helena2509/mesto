@@ -1,17 +1,4 @@
-
 @import url(./__container/popup__container.css);
-
-@import url(./form/form__closeButton.css);
-
-@import url(./form/form__description.css);
-
-@import url(./form/form__heading.css);
-
-@import url(./form/form__name.css);
-
-@import url(./form/form__submitButton.css);
-
-@import url(./form/form.css);
 
 .popup {
   display: none;

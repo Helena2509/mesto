@@ -1,0 +1,20 @@
+@import url(./__closeButton/form__closeButton.css);
+
+@import url(./__description/form__description.css);
+
+@import url(./__heading/form__heading.css);
+
+@import url(./__name/form__name.css);
+
+@import url(./__submitButton/form__submitButton.css);
+
+.form {
+  margin: 0 0 0 33px;
+}
+
+@media screen and (max-width : 700px) {
+  .form {
+
+  }
+}
+
