@@ -5,7 +5,7 @@
   width: 150px;
   height: 50px;
   background-color: black;
-  background-image: url(../../../images/add_buttom.png);
+  background-image: url(../../../images/addbutton.svg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   border: 2px solid #FFFFFF;
@@ -15,10 +15,10 @@
 }
 
 .profile__addButton:hover {
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  opacity: 0.7;
 }
 
-@media screen and (max-width : 1080px) {
+@media screen and (max-width : 1090px) {
   .profile__addButton {
     margin: 0 auto 36px;
   }
@@ -28,5 +28,6 @@
   .profile__addButton {
     width: 282px;
     height: 50px;
+    margin: 0 auto 36px;
   }
 }

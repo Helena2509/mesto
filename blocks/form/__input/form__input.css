@@ -1,12 +1,14 @@
-.form__description {
+.form__input {
+  font-family: 'Inter', Arial, sans-serif;
   width: 358px;
-  margin: 0 auto 20px;
+  margin: 0 auto 28px;
   border: 0;
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
 @media screen and (max-width : 700px) {
-  .form__description  {
+  .form__input  {
     width: 205px;
+    margin: 0 auto 21px;
   }
 }
