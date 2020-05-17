@@ -9,8 +9,8 @@ let closebutton = document.querySelector('.popup__closeButton');
 
 function formOpen () {
   popup.classList.add('popup_opened');
-  nameInput.value = author.innerText;
-  jobInput.value = description.innerText;
+  nameInput.value = author.textContent;
+  jobInput.value = description.textContent;
 }
 
 function formClose () {
@@ -19,10 +19,8 @@ function formClose () {
 
 function formSubmitHandler (evt) {
   evt.preventDefault(); 
-  let name = nameInput.value;
-  let job = jobInput.value;
-  author.textContent = name;
-  description.textContent = job;
+  author.textContent = nameInput.value;
+  description.textContent = jobInput.value;
   popup.classList.remove('popup_opened');
 }
 
