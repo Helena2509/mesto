@@ -9,6 +9,12 @@ let closebutton = document.querySelector('.popup__closeButton');
 let elements = document.querySelector('.elements');
 let DeleteButton = document.querySelector('.element__deleteButton');
 let popupImage = document.querySelector('.popup-image');
+let addButton = document.querySelector('.profile__addButton');
+let popupMesto = document.querySelector('.popup-mesto');
+let formMestoElement = document.querySelector('.form-mesto'); 
+let closeMestobutton = document.querySelector('.popup-mesto__closeButton');
+let titleInput = document.querySelector('.input_title');
+let linkInput = document.querySelector('.input_link');
 
 const initialCards = [
   {
@@ -73,10 +79,6 @@ function imagePopupOpen (e) {
   popupImage.querySelector('.popup-image__closeButton').addEventListener('click', imagePopupClose);
 }
 
-
-
-
-
 function formOpen () {
   popup.classList.add('popup_opened');
   nameInput.value = author.textContent;
@@ -85,7 +87,6 @@ function formOpen () {
 
 function formClose () {
   popup.classList.remove('popup_opened');
-
 }
 
 function formSubmitHandler (evt) {
@@ -98,18 +99,6 @@ function formSubmitHandler (evt) {
 editButton.addEventListener('click', formOpen);
 formElement.addEventListener('submit', formSubmitHandler);
 closebutton.addEventListener('click', formClose);
-
-
-
-
-
-let addButton = document.querySelector('.profile__addButton');
-let popupMesto = document.querySelector('.popup-mesto');
-let formMestoElement = document.querySelector('.form-mesto'); 
-let closeMestobutton = document.querySelector('.popup-mesto__closeButton');
-let titleInput = document.querySelector('.input_title');
-let linkInput = document.querySelector('.input_link');
-
 
 function formMestoOpen () {
   popupMesto.classList.add('popup-mesto_opened');
@@ -130,18 +119,3 @@ function formMestoSubmit (evt) {
 addButton.addEventListener('click', formMestoOpen);
 formMestoElement.addEventListener('submit', formMestoSubmit);
 closeMestobutton.addEventListener('click', formMestoClose);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
