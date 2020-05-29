@@ -1,15 +1,15 @@
-.popup__heading {
+.popup-mesto__heading {
   font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
   text-align: center;
-  margin: 34px 0px 52px -53px;
+  margin: 34px 0px 52px -209px;
 }
 
 @media screen and (max-width : 700px) {
-  .popup__heading {
-    margin: 13px 0px 28px 0px;
+  .popup-mesto__heading {
+    margin: 29px 0px 40px -40px;
   }
 }

@@ -1,0 +1,9 @@
+@import url(./__input/form-mesto__input.css);
+
+@import url(./__submitButton/form-mesto__submitButton.css);
+
+.form-mesto {
+  margin: 0 0 0 33px;
+}
+
+

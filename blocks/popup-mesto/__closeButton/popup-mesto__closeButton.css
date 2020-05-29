@@ -1,4 +1,4 @@
-.popup__closeButton {
+.popup-mesto__closeButton {
   position: absolute;
   top: -37px;
   left: 428px;
@@ -14,14 +14,14 @@
   cursor: pointer;
 }
 
-.popup__closeButton:hover {
+.popup-mesto__closeButton:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width : 700px) {
-  .popup__closeButton {
+  .popup-mesto__closeButton {
     top: -24px;
-    left: 243px;
+    left: 242px;
     width: 22px;
     height: 22px;
   }

@@ -15,3 +15,7 @@
 .element__group:hover {
   opacity: 0.7;
 }
+
+.group-like {
+  background-image: url(../../../images/like.svg);
+}
