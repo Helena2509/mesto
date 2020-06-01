@@ -1,10 +1,10 @@
-@import url(./__addButton/profile__addButton.css);
+@import url(./__add-button/profile__add-button.css);
 
 @import url(./__author/profile__author.css);
 
 @import url(./__description/profile__description.css);
 
-@import url(./__edditButton/profile__editButton.css);
+@import url(./__eddit-button/profile__edit-button.css);
 
 @import url(./__image/profile__image.css);
 
