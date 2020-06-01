@@ -2,6 +2,6 @@
 
 @import url(./__submit-button/form__submit-button.css);
 
-@import url(./__input_description/form__input_description.css);
+@import url(./__input/_type/form__input_type_top.css);
 
-@import url(./__input_name/form__input_name.css);
+@import url(./__input/_type/form__input_type_bottom.css);

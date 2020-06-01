@@ -5,7 +5,6 @@ const buttonAdd = document.querySelector('.profile__add-button');
 const popup = document.querySelector('.popup');
 const popupPlace = document.querySelector('.popup_type_place');
 const popupImage = document.querySelector('.popup_type_image');
-const imagePopup = document.querySelector('.popup__image');
 const buttonClose = document.querySelector('.popup__close-button');
 const buttonClosePlace = document.querySelector('.popup__close-button_type_place');
 const buttonCloseImage = document.querySelector('.popup__close-button_type_image');
@@ -16,6 +15,8 @@ const jobInput = document.querySelector('.form__input_description');
 const titleInput = document.querySelector('.form__input_title');
 const linkInput = document.querySelector('.form__input_link');
 const elements = document.querySelector('.elements');
+const buttonDelete = document.querySelector('.element__delete-button');
+const imagePopup = document.querySelector('.popup__image');
 
 const initialCards = [
   {
@@ -61,8 +62,8 @@ function deleteCard(ev) {
 }
 
 function openPopupImage (e) {
-  const imageLink = e.target.src;
-  const imageHeading = e.target.closest('.element').querySelector('.element__heading').textContent;
+  let imageLink = e.target.src;
+  let imageHeading = e.target.closest('.element').querySelector('.element__heading').textContent;
   openPopup (popupImage);
   popupImage.querySelector('.popup__image').src = imageLink;
   popupImage.querySelector('.popup__description').textContent = imageHeading;

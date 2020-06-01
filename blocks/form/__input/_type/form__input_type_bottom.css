@@ -1,9 +1,9 @@
-.form__input_description {
+.form__input_type_bottom {
   top: 172px;
 }
 
 @media screen and (max-width : 700px) {
-  .form__input_description {
+  .form__input_type_bottom {
     top: 134px;
   }
 }
