@@ -1,9 +1,0 @@
-.form__input_type_top {
-  top: 115px;
-}
-
-@media screen and (max-width : 700px) {
-  .form__input_type_top {
-    top: 90px;
-  }
-}
