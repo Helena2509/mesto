@@ -21,8 +21,6 @@ const titleInput = document.querySelector('.form__input_title');
 const linkInput = document.querySelector('.form__input_link');
 const elements = document.querySelector('.elements');
 
-const submitb = document.querySelector('.form__submit-button');
-
 const initialCards = [
   {
       name: 'Архыз',
@@ -52,9 +50,6 @@ const initialCards = [
 
 function openPopup (evt) {
   evt.classList.add('popup_opened');
-  console.log(evt);
-  toggleButtonState(evt.querySelector('.form'), evt.querySelector('.form__submit-button'));
-  
 }
 
 function closePopup (evt) {
@@ -111,6 +106,7 @@ function openFormProfile () {
   nameInput.value = author.textContent;
   jobInput.value = description.textContent;
   openPopup (popupProfile);
+  setSubmitButtonStateProfile(true);
   document.addEventListener('keydown', function(evt) { 
     if (evt.key === 'Escape') {
       closePopup(popupProfile);
@@ -123,6 +119,7 @@ function submitFormProfile (evt) {
   author.textContent = nameInput.value;
   description.textContent = jobInput.value;
   closePopup(popupProfile);
+  setSubmitButtonStateProfile(false);
 }
 
 formElement.addEventListener('submit', submitFormProfile);
@@ -133,7 +130,7 @@ overlayProfile.addEventListener('click', function(){closePopup (popupProfile)});
 
 function openFormPlace () {
   openPopup (popupPlace);
-  
+  fromPlace.reset();
   document.addEventListener('keydown', function(evt) { 
     if (evt.key === 'Escape') {
       closePopup(popupPlace);
@@ -145,7 +142,7 @@ function submitFormPlace (evt) {
   evt.preventDefault(); 
   addCard(titleInput.value, linkInput.value);
   closePopup (popupPlace);
-  fromPlace.reset();
+  setSubmitButtonStatePlace(false);
 }
 
 fromPlace.addEventListener('submit', submitFormPlace);
