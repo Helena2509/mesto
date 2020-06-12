@@ -5,8 +5,6 @@ const buttonAdd = document.querySelector('.profile__add-button');
 const popupProfile = document.querySelector('.popup_type_profile');
 const popupPlace = document.querySelector('.popup_type_place');
 const popupImage = document.querySelector('.popup_type_image');
-const buttonSubmitProfile = document.querySelector('.form__submit-button_type_profile');
-const buttonSubmitPlace = document.querySelector('.form__submit-button_type_place');
 const buttonCloseProfile = document.querySelector('.popup__close-button_type_profile');
 const buttonClosePlace = document.querySelector('.popup__close-button_type_place');
 const buttonCloseImage = document.querySelector('.popup__close-button_type_image');
@@ -21,7 +19,6 @@ const titleInput = document.querySelector('.form__input_title');
 const linkInput = document.querySelector('.form__input_link');
 const elements = document.querySelector('.elements');
 
-const submitb = document.querySelector('.form__submit-button');
 
 const initialCards = [
   {
@@ -52,9 +49,7 @@ const initialCards = [
 
 function openPopup (evt) {
   evt.classList.add('popup_opened');
-  console.log(evt);
   toggleButtonState(evt.querySelector('.form'), evt.querySelector('.form__submit-button'));
-  
 }
 
 function closePopup (evt) {
@@ -152,9 +147,3 @@ fromPlace.addEventListener('submit', submitFormPlace);
 buttonAdd.addEventListener('click', openFormPlace);
 buttonClosePlace.addEventListener('click', function(){closePopup (popupPlace)});
 overlayPlace.addEventListener('click', function(){closePopup (popupPlace)});
-
-function keyclose(evt) { 
-  if (evt.key === 'Escape') {
-    closePopup(popup);
-  }
-}
