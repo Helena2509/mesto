@@ -27,7 +27,7 @@ initialCards.forEach((item) => {
   const card = new Card(item, '#element-template');
   const cardElement = card.generateCard();
 
-  document.querySelector('.elements').append(cardElement);
+  elements.prepend(cardElement);
 });
 
 
@@ -39,32 +39,21 @@ function closePopup (evt) {
   evt.classList.remove('popup_opened');
 }
 
-function openPopupImage (e) {
-  const imageLink = e.target.src;
-  const imageHeading = e.target.closest('.element').querySelector('.element__heading').textContent;
-  popupImage.querySelector('.popup__image').src = imageLink;
-  popupImage.querySelector('.popup__description').textContent = imageHeading;
-  openPopup (popupImage);
-  document.addEventListener('keydown', function(evt) { 
-    if (evt.key === 'Escape') {
-      closePopup(popupImage);
-    }
-  })
-}
-
 buttonCloseImage.addEventListener('click', function(){closePopup (popupImage)});
 overlayImage.addEventListener('click', function(){closePopup (popupImage)});
 
 function openFormProfile () {
   const formProfileValidation = new FormValidator ({
-  inputs: '.form__input',
-  formSubmit: '.form__submit-button',
-  form: '.form',
-  fieldset: '.form__set',
-  cls_type_error: 'form__input_type_error',
-  cls_error_active: 'form__input-error_active',
-  cls_inactive: 'form__submit_inactive'
-  }, popupProfile);
+    inputs: '.form__input',
+    formSubmit: '.form__submit-button',
+    form: '.form',
+    fieldset: '.form__set',
+    cls_type_error: 'form__input_type_error',
+    cls_error_active: 'form__input-error_active',
+    cls_inactive: 'form__submit_inactive'
+    }, popupProfile);
+  formProfileValidation.resetFormValidation(nameInput);
+  formProfileValidation.resetFormValidation(jobInput);
 
   nameInput.value = author.textContent;
   jobInput.value = description.textContent;
@@ -100,9 +89,14 @@ function openFormPlace () {
     cls_error_active: 'form__input-error_active',
     cls_inactive: 'form__submit_inactive'
     }, popupPlace);
+  formPlaceValidation.resetFormValidation(titleInput);
+  formPlaceValidation.resetFormValidation(linkInput);
   formPlaceValidation.enableValidation();
-  openPopup (popupPlace);
   
+  openPopup (popupPlace);
+  titleInput.value = '';
+  linkInput.value = '';
+
   document.addEventListener('keydown', function(evt) { 
     if (evt.key === 'Escape') {
       closePopup(popupPlace);
@@ -114,7 +108,7 @@ function submitFormPlace (evt) {
   evt.preventDefault();
   const card = new Card({name: titleInput.value, link: linkInput.value}, '#element-template');
   const cardElement = card.generateCard();
-  document.querySelector('.elements').append(cardElement);
+  document.querySelector('.elements').prepend(cardElement);
   closePopup (popupPlace);
   fromPlace.reset();
 }

@@ -2,6 +2,7 @@ export class FormValidator {
   constructor(options, form) {
     this._options = options;
     this._form = form;
+   
   }
 
   enableValidation() {
@@ -46,7 +47,7 @@ export class FormValidator {
     })
   }
 
-  _checkInputValidity(formElement,inputElement) {
+  _checkInputValidity(formElement, inputElement) {
     if (!inputElement.validity.valid) {
       this._showInputError(formElement, inputElement, inputElement.validationMessage);
     } else {
@@ -65,6 +66,12 @@ export class FormValidator {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.remove(this._options.cls_type_error);
     errorElement.classList.remove(this._options.cls_error_active);
+    errorElement.textContent = '';
+  }
+
+  resetFormValidation (inputElement) {
+    const errorElement = document.querySelector(`#${inputElement.id}-error`);
+    inputElement.classList.remove(this._options.cls_type_error);
     errorElement.textContent = '';
   }
 }
