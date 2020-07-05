@@ -33,7 +33,7 @@
     this._element.remove()
   }
 
-  _open () {
+  _openPopup () {
     const imageLink = this._element.querySelector('.element__image').src;
     const imageHeading = this._element.closest('.element').querySelector('.element__heading').textContent;
     const popupImage = document.querySelector('.popup_type_image');
@@ -55,7 +55,7 @@
       this._deleteElement();
     });
     this._element.querySelector('.element__image').addEventListener('click', () => {
-      this._open();
+      this._openPopup();
     });
   }
 
