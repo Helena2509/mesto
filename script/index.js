@@ -23,20 +23,24 @@ const titleInput = document.querySelector('.form__input_title');
 const linkInput = document.querySelector('.form__input_link');
 const elements = document.querySelector('.elements');
 
-initialCards.forEach((item) => {
-  const card = new Card(item, '#element-template');
+function makeCard(argument) {
+  const card = new Card(argument, '#element-template');
   const cardElement = card.generateCard();
+  return cardElement;
+}
 
-  elements.prepend(cardElement);
+initialCards.forEach((item) => {
+  const cardElement = makeCard(item);
+  elements.append(cardElement);
 });
 
 
-function openPopup (evt) {
-  evt.classList.add('popup_opened');
+function openPopup (popupElement) {
+  popupElement.classList.add('popup_opened');
 }
 
-function closePopup (evt) {
-  evt.classList.remove('popup_opened');
+function closePopup (popupElement) {
+  popupElement.classList.remove('popup_opened');
 }
 
 buttonCloseImage.addEventListener('click', function(){closePopup (popupImage)});
@@ -106,8 +110,7 @@ function openFormPlace () {
 
 function submitFormPlace (evt) {
   evt.preventDefault();
-  const card = new Card({name: titleInput.value, link: linkInput.value}, '#element-template');
-  const cardElement = card.generateCard();
+  const cardElement = makeCard({name: titleInput.value, link: linkInput.value});
   document.querySelector('.elements').prepend(cardElement);
   closePopup (popupPlace);
   fromPlace.reset();
