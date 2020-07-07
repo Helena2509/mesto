@@ -42,7 +42,7 @@
     popupImage.classList.add('popup_opened');
     document.addEventListener('keydown', function(evt) { 
       if (evt.key === 'Escape') {
-        closePopup(popupImage);
+        document.querySelector('.popup_type_image').classList.remove('popup_opened');
       }
     })
   }
