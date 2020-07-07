@@ -55,7 +55,7 @@ function openFormProfile () {
     cls_type_error: 'form__input_type_error',
     cls_error_active: 'form__input-error_active',
     cls_inactive: 'form__submit_inactive'
-    }, popupProfile);
+  }, popupProfile);
   formProfileValidation.resetFormValidation(nameInput);
   formProfileValidation.resetFormValidation(jobInput);
 
@@ -92,15 +92,13 @@ function openFormPlace () {
     cls_type_error: 'form__input_type_error',
     cls_error_active: 'form__input-error_active',
     cls_inactive: 'form__submit_inactive'
-    }, popupPlace);
+  }, popupPlace);
   formPlaceValidation.resetFormValidation(titleInput);
   formPlaceValidation.resetFormValidation(linkInput);
-  formPlaceValidation.enableValidation();
-  
   openPopup (popupPlace);
   titleInput.value = '';
   linkInput.value = '';
-
+  formPlaceValidation.enableValidation();
   document.addEventListener('keydown', function(evt) { 
     if (evt.key === 'Escape') {
       closePopup(popupPlace);
@@ -114,6 +112,7 @@ function submitFormPlace (evt) {
   document.querySelector('.elements').prepend(cardElement);
   closePopup (popupPlace);
   fromPlace.reset();
+  
 }
 
 fromPlace.addEventListener('submit', submitFormPlace);
