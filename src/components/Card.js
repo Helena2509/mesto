@@ -1,8 +1,9 @@
-﻿export class Card {
-  constructor (data, cardSelector) {
+﻿export default class Card {
+  constructor (data, cardSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -33,20 +34,6 @@
     this._element.remove()
   }
 
-  _openPopup () {
-    const imageLink = this._element.querySelector('.element__image').src;
-    const imageHeading = this._element.closest('.element').querySelector('.element__heading').textContent;
-    const popupImage = document.querySelector('.popup_type_image');
-    popupImage.querySelector('.popup__image').src = imageLink;
-    popupImage.querySelector('.popup__description').textContent = imageHeading;
-    popupImage.classList.add('popup_opened');
-    document.addEventListener('keydown', function(evt) { 
-      if (evt.key === 'Escape') {
-        document.querySelector('.popup_type_image').classList.remove('popup_opened');
-      }
-    })
-  }
-
   _setEventListeners () {
     this._element.querySelector('.element__like-button').addEventListener('click', () => {
       this._likeElement();
@@ -55,7 +42,9 @@
       this._deleteElement();
     });
     this._element.querySelector('.element__image').addEventListener('click', () => {
-      this._openPopup();
+      const imageLink = this._element.querySelector('.element__image').src;
+      const imageHeading = this._element.closest('.element').querySelector('.element__heading').textContent;
+      this._handleCardClick.open(imageLink, imageHeading);
     });
   }
 

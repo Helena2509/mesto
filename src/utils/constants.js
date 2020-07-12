@@ -1,4 +1,13 @@
-﻿export const initialCards = [
+﻿export const buttonEdit = document.querySelector('.profile__edit-button');
+export const buttonAdd = document.querySelector('.profile__add-button');
+export const popupProfile = document.querySelector('.popup_type_profile');
+export const popupPlace = document.querySelector('.popup_type_place');
+export const nameInput = document.querySelector('.form__input_name');
+export const jobInput = document.querySelector('.form__input_description');
+export const titleInput = document.querySelector('.form__input_title');
+export const linkInput = document.querySelector('.form__input_link');
+
+export const initialCards = [
   {
       name: 'Архыз',
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
