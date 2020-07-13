@@ -47,11 +47,4 @@
       this._handleCardClick.open(imageLink, imageHeading);
     });
   }
-
-  
 }
-
-
-
-
-
