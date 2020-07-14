@@ -1,6 +1,4 @@
-﻿import FormValidator from '../components/FormValidator.js'
-
-export const buttonEdit = document.querySelector('.profile__edit-button');
+﻿export const buttonEdit = document.querySelector('.profile__edit-button');
 export const buttonAdd = document.querySelector('.profile__add-button');
 export const popupProfile = document.querySelector('.popup_type_profile');
 export const popupPlace = document.querySelector('.popup_type_place');
@@ -37,22 +35,10 @@ export const initialCards = [
   }
 ];
 
-export const formPlaceValidation = new FormValidator ({
-  inputs: '.form__input',
-  formSubmit: '.form__submit-button',
-  form: '.form',
-  fieldset: '.form__set',
-  cls_type_error: 'form__input_type_error',
-  cls_error_active: 'form__input-error_active',
-  cls_inactive: 'form__submit_inactive'
-}, popupPlace);
-
-export const formProfileValidation = new FormValidator ({
-  inputs: '.form__input',
-  formSubmit: '.form__submit-button',
-  form: '.form',
-  fieldset: '.form__set',
-  cls_type_error: 'form__input_type_error',
-  cls_error_active: 'form__input-error_active',
-  cls_inactive: 'form__submit_inactive'
-}, popupProfile);
+export const object = { inputs: '.form__input',
+formSubmit: '.form__submit-button',
+form: '.form',
+fieldset: '.form__set',
+cls_type_error: 'form__input_type_error',
+cls_error_active: 'form__input-error_active',
+cls_inactive: 'form__submit_inactive' };

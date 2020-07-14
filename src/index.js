@@ -1,7 +1,6 @@
 ﻿import './pages/index.css';
-
 import Card from './components/Card.js'
-
+import FormValidator from './components/FormValidator.js'
 import PopupWithForm from './components/PopupWithForm.js'
 import PopupWithImage from './components/PopupWithImage.js'
 import Section from './components/Section.js'
@@ -16,8 +15,7 @@ import { initialCards,
          titleInput,
          linkInput,
          elements,
-         formPlaceValidation,
-         formProfileValidation } from './utils/constants.js'
+         object } from './utils/constants.js'
 
 
 const cardImagePopup = new PopupWithImage('.popup_type_image');
@@ -37,6 +35,7 @@ const popupProfileForm = new PopupWithForm('.popup_type_profile', submitFormProf
 popupProfileForm.setEventListeners();
 
 function openFormProfile () {
+  const formProfileValidation = new FormValidator (object, popupProfile);
   formProfileValidation.resetFormValidation(nameInput);
   formProfileValidation.resetFormValidation(jobInput);
   const infoObject = userInfo.getUserInfo();
@@ -57,6 +56,7 @@ buttonEdit.addEventListener('click', openFormProfile);
 const popupPlaceForm = new PopupWithForm('.popup_type_place', submitFormPlace);
 popupPlaceForm.setEventListeners();
 function openFormPlace () {
+  const formPlaceValidation = new FormValidator (object, popupPlace);
   formPlaceValidation.resetFormValidation(titleInput);
   formPlaceValidation.resetFormValidation(linkInput);
   popupPlaceForm.open();
