@@ -5,8 +5,10 @@
 * Флекс-боксы,
 * Гриды,
 * Позиционирование элементов,
-* Анимации
-* Java-Script
+* Анимации,
+* Java-Script,
+* Модули,
+* Webpack
 
 
 [Ссылка на GH](https://helena2509.github.io/mesto/src/index.html)
