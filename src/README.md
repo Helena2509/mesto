@@ -11,4 +11,4 @@
 * Webpack
 
 
-[Ссылка на GH](https://helena2509.github.io/mesto/src/index.html)
+[Ссылка на GH](https://helena2509.github.io/mesto/index.html)
