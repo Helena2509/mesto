@@ -7,38 +7,14 @@ export const jobInput = document.querySelector('.form__input_description');
 export const titleInput = document.querySelector('.form__input_title');
 export const linkInput = document.querySelector('.form__input_link');
 export const elements = document.querySelector('.elements');
-
-export const initialCards = [
-  {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
-export const object = { inputs: '.form__input',
-formSubmit: '.form__submit-button',
-form: '.form',
-fieldset: '.form__set',
-cls_type_error: 'form__input_type_error',
-cls_error_active: 'form__input-error_active',
-cls_inactive: 'form__submit_inactive' };
+export const popupAvatar = document.querySelector('.popup_type_avatar');
+export const avatarInput = document.querySelector('.form__input_avatar');
+export const object = {
+  inputs: '.form__input',
+  formSubmit: '.form__submit-button',
+  form: '.form',
+  fieldset: '.form__set',
+  cls_type_error: 'form__input_type_error',
+  cls_error_active: 'form__input-error_active',
+  cls_inactive: 'form__submit_inactive',
+};

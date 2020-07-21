@@ -2,7 +2,7 @@
   width: 22px;
   height: 20px;
   justify-content: center;
-  margin: auto 30px auto auto;
+  margin: 21px 30px 0 auto;
   outline: none; 
   background-color: white;
   border: 0.5px solid #eee;
@@ -14,3 +14,18 @@
   opacity: 0.7;
 }
 
+.element__like-number {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  width: 9px;
+  height: 13px;
+  margin: 2px 0 0 7px;
+}
+
+.element__like-container {
+  display: flex;
+  flex-direction: column;
+}

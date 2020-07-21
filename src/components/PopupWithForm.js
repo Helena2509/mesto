@@ -1,4 +1,4 @@
-import Popup from './Popup.js'
+import Popup from './Popup.js';
 
 export default class PopupWithForm extends Popup {
   constructor(popupSelector, submitCallback) {
@@ -13,8 +13,9 @@ export default class PopupWithForm extends Popup {
 
   setEventListeners() {
     super.setEventListeners();
-    this._container.querySelector('form').addEventListener('submit', this._submitCallback);
-   
+    this._container
+      .querySelector('form')
+      .addEventListener('submit', this._submitCallback);
   }
 
   close() {
@@ -22,4 +23,13 @@ export default class PopupWithForm extends Popup {
     this._container.querySelector('form').reset();
   }
 
+  isLoading(es) {
+    if (es) {
+      this._container.querySelector('.form__submit-button').textContent =
+        'Сохранение...';
+    } else {
+      this._container.querySelector('.form__submit-button').textContent =
+        'Сохранить';
+    }
+  }
 }
