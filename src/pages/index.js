@@ -1,12 +1,12 @@
-﻿import './pages/index.css';
-import Card from './components/Card.js';
-import Api from './components/Api.js';
-import PopupDeleteCard from './components/PopupDeleteCard.js';
-import FormValidator from './components/FormValidator.js';
-import PopupWithForm from './components/PopupWithForm.js';
-import PopupWithImage from './components/PopupWithImage.js';
-import Section from './components/Section.js';
-import UserInfo from './components/UserInfo.js';
+﻿import './index.css';
+import Card from '../components/Card.js';
+import Api from '../components/Api.js';
+import PopupDeleteCard from '../components/PopupDeleteCard.js';
+import FormValidator from '../components/FormValidator.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import Section from '../components/Section.js';
+import UserInfo from '../components/UserInfo.js';
 import {
   buttonEdit,
   buttonAdd,
@@ -20,7 +20,8 @@ import {
   linkInput,
   elements,
   object,
-} from './utils/constants.js';
+  buttonImage
+} from '../utils/constants.js';
 
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-13',
@@ -35,9 +36,9 @@ popupDelete.setEventListeners();
 const cardImagePopup = new PopupWithImage('.popup_type_image');
 cardImagePopup.setEventListeners();
 function makeCard(element) {
-  element.isMine = element.owner._id == userInfo.getUserInfo()._id;
+  element.isMine = element.owner._id === userInfo.getUserInfo()._id;
   for (let user of element.likes) {
-    if (user._id == userInfo.getUserInfo()._id) {
+    if (user._id === userInfo.getUserInfo()._id) {
       element.isLiked = true;
       break;
     } else {
@@ -96,8 +97,8 @@ function handleDeleteClick(id) {
   api.deleteCard(id);
 }
 
+const formProfileValidation = new FormValidator(object, popupProfile);
 function openFormProfile() {
-  const formProfileValidation = new FormValidator(object, popupProfile);
   formProfileValidation.resetFormValidation(nameInput);
   formProfileValidation.resetFormValidation(jobInput);
   const infoObject = userInfo.getUserInfo();
@@ -122,8 +123,8 @@ function submitFormProfile(evt) {
     })
     .finally(() => {
       popupProfileForm.isLoading(false);
+      popupProfileForm.close();
     });
-  popupProfileForm.close();
 }
 
 buttonEdit.addEventListener('click', openFormProfile);
@@ -133,8 +134,8 @@ const popupAvatarForm = new PopupWithForm(
   submitFormAvatar
 );
 popupAvatarForm.setEventListeners();
+const formAvatarValidator = new FormValidator(object, popupAvatar);
 function openPopupAvatar() {
-  const formAvatarValidator = new FormValidator(object, popupAvatar);
   formAvatarValidator.resetFormValidation(avatarInput);
   popupAvatarForm.open();
   const infoObject = userInfo.getUserInfo();
@@ -157,18 +158,16 @@ function submitFormAvatar(evt) {
     })
     .finally(() => {
       popupAvatarForm.isLoading(false);
+      popupAvatarForm.close();
     });
-  popupAvatarForm.close();
 }
 
-document
-  .querySelector('.profile__image')
-  .addEventListener('click', openPopupAvatar);
+buttonImage.addEventListener('click', openPopupAvatar);
 
 const popupPlaceForm = new PopupWithForm('.popup_type_place', submitFormPlace);
 popupPlaceForm.setEventListeners();
+const formPlaceValidation = new FormValidator(object, popupPlace);
 function openFormPlace() {
-  const formPlaceValidation = new FormValidator(object, popupPlace);
   formPlaceValidation.resetFormValidation(titleInput);
   formPlaceValidation.resetFormValidation(linkInput);
   popupPlaceForm.open();
@@ -193,8 +192,8 @@ function submitFormPlace(evt) {
     })
     .finally(() => {
       popupPlaceForm.isLoading(false);
+      popupPlaceForm.close();
     });
-  popupPlaceForm.close();
 }
 
 buttonAdd.addEventListener('click', openFormPlace);

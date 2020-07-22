@@ -23,8 +23,8 @@ export default class PopupWithForm extends Popup {
     this._container.querySelector('form').reset();
   }
 
-  isLoading(es) {
-    if (es) {
+  isLoading(load) {
+    if (load) {
       this._container.querySelector('.form__submit-button').textContent =
         'Сохранение...';
     } else {

@@ -56,20 +56,21 @@
       elementhgh.classList.contains('element__like-button_active')
     );
 
-    if (elementhgh.classList.contains('element__like-button_active')) {
+    elementhgh.classList.contains('element__like-button_active') ? (
       check.then((data) => {
         this._element.querySelector('.element__like-number').textContent =
           data.likes.length;
         elementhgh.classList.remove('element__like-button_active');
-      });
-    } else {
+      })
+    ) : (
       check.then((data) => {
         this._element.querySelector('.element__like-number').textContent =
           data.likes.length;
         elementhgh.classList.add('element__like-button_active');
-      });
-    }
+      })
+    );
   }
+  
 
   _deleteElement(element) {
     return () => {

@@ -21,10 +21,7 @@ export default class Api {
   addCard(name, link) {
     return fetch(this._baseURL + '/cards', {
       method: 'POST',
-      headers: {
-        authorization: '02a3d997-e4eb-47bc-b832-a3089c38bc48',
-        'Content-Type': 'application/json',
-      },
+      headers: this._headers,
       body: JSON.stringify({
         name: name,
         link: link,
@@ -51,10 +48,7 @@ export default class Api {
   editUserInfo(name, desc) {
     return fetch(this._baseURL + '/users/me', {
       method: 'PATCH',
-      headers: {
-        authorization: '02a3d997-e4eb-47bc-b832-a3089c38bc48',
-        'Content-Type': 'application/json',
-      },
+      headers: this._headers,
       body: JSON.stringify({
         name: name,
         about: desc,
@@ -67,10 +61,7 @@ export default class Api {
   editAvatarInfo(avalink) {
     return fetch(this._baseURL + '/users/me/avatar', {
       method: 'PATCH',
-      headers: {
-        authorization: '02a3d997-e4eb-47bc-b832-a3089c38bc48',
-        'Content-Type': 'application/json',
-      },
+      headers: this._headers,
       body: JSON.stringify({
         avatar: avalink,
       }),
@@ -82,9 +73,7 @@ export default class Api {
   setLike(id) {
     return fetch(this._baseURL + '/cards/likes/' + id, {
       method: 'PUT',
-      headers: {
-        authorization: '02a3d997-e4eb-47bc-b832-a3089c38bc48',
-      },
+      headers: this._headers,
     })
       .then((res) => {
         if (res.ok) return res.json();
@@ -97,9 +86,7 @@ export default class Api {
   deleteLike(id) {
     return fetch(this._baseURL + '/cards/likes/' + id, {
       method: 'DELETE',
-      headers: {
-        authorization: '02a3d997-e4eb-47bc-b832-a3089c38bc48',
-      },
+      headers: this._headers,
     })
       .then((res) => {
         if (res.ok) return res.json();
@@ -112,9 +99,7 @@ export default class Api {
   deleteCard(id) {
     return fetch(this._baseURL + '/cards/' + id, {
       method: 'DELETE',
-      headers: {
-        authorization: '02a3d997-e4eb-47bc-b832-a3089c38bc48',
-      },
+      headers: this._headers,
     })
       .then((res) => {
         if (res.ok) return res.json();

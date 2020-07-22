@@ -9,6 +9,7 @@ export const linkInput = document.querySelector('.form__input_link');
 export const elements = document.querySelector('.elements');
 export const popupAvatar = document.querySelector('.popup_type_avatar');
 export const avatarInput = document.querySelector('.form__input_avatar');
+export const buttonImage = document.querySelector('.profile__image');
 export const object = {
   inputs: '.form__input',
   formSubmit: '.form__submit-button',
