@@ -9,7 +9,6 @@ export default class PopupDeleteCard extends Popup {
     const buttonDelete = this._container.querySelector('.form__submit-button');
     buttonDelete.addEventListener('click', () => {
       deleteCallback();
-      this.close();
     });
   }
 }

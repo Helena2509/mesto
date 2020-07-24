@@ -94,18 +94,21 @@ function handleLikeClick(id, isLiked) {
 }
 
 function handleDeleteClick(id) {
-  api.deleteCard(id);
+  api.deleteCard(id).finally(() => {
+    popupDelete.close();
+  })
 }
 
 const formProfileValidation = new FormValidator(object, popupProfile);
+formProfileValidation.enableValidation();
 function openFormProfile() {
   formProfileValidation.resetFormValidation(nameInput);
   formProfileValidation.resetFormValidation(jobInput);
   const infoObject = userInfo.getUserInfo();
   nameInput.value = infoObject.name;
   jobInput.value = infoObject.description;
+  formProfileValidation.checkValidation();
   popupProfileForm.open();
-  formProfileValidation.enableValidation();
 }
 
 function submitFormProfile(evt) {
@@ -135,12 +138,13 @@ const popupAvatarForm = new PopupWithForm(
 );
 popupAvatarForm.setEventListeners();
 const formAvatarValidator = new FormValidator(object, popupAvatar);
+formAvatarValidator.enableValidation();
 function openPopupAvatar() {
   formAvatarValidator.resetFormValidation(avatarInput);
-  popupAvatarForm.open();
   const infoObject = userInfo.getUserInfo();
   avatarInput.value = infoObject.avalink;
-  formAvatarValidator.enableValidation();
+  formAvatarValidator.checkValidation();
+  popupAvatarForm.open();
 }
 
 function submitFormAvatar(evt) {
@@ -167,13 +171,14 @@ buttonImage.addEventListener('click', openPopupAvatar);
 const popupPlaceForm = new PopupWithForm('.popup_type_place', submitFormPlace);
 popupPlaceForm.setEventListeners();
 const formPlaceValidation = new FormValidator(object, popupPlace);
+formPlaceValidation.enableValidation();
 function openFormPlace() {
   formPlaceValidation.resetFormValidation(titleInput);
   formPlaceValidation.resetFormValidation(linkInput);
-  popupPlaceForm.open();
   titleInput.value = '';
   linkInput.value = '';
-  formPlaceValidation.enableValidation();
+  formPlaceValidation.checkValidation();
+  popupPlaceForm.open();
 }
 
 function submitFormPlace(evt) {

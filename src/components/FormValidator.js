@@ -4,6 +4,14 @@ export default class FormValidator {
     this._form = form;
   }
 
+  checkValidation() {
+    this._toggleButtonState(
+      this._form,
+      this._form.querySelector(this._options.formSubmit)
+    );
+  }
+
+
   enableValidation() {
     this._toggleButtonState(
       this._form,
